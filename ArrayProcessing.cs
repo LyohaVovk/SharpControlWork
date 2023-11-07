@@ -10,3 +10,22 @@
 [“1234”, “1567”, “-2”, “computer science”] → [“-2”]
 [“Russia”, “Denmark”, “Kazan”] → []
 */
+
+string[] baseArray = {"Hello", "2", "world", ":-)"};
+string[] newStrArr = new string[0];
+string tmp = string.Empty;
+
+for (int i = 0; i < baseArray.Length; i++)
+{
+    tmp = baseArray[i];
+    if (tmp.Length <= 3)
+    {
+        Array.Resize(ref newStrArr, newStrArr.Length + 1);
+        newStrArr[i] = tmp;
+    }
+}
+
+if (newStrArr.Length > 0)
+{
+    for (int i = 0; i < newStrArr.Length; i++) Console.WriteLine(newStrArr[i]);
+}
